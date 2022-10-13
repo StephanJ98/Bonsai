@@ -1,0 +1,18 @@
+#nameContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #5c5b5b;
+}
+
+#name {
+    width: 90%;
+    height: 35px;
+    font-size: 30px;
+    border: 2px solid #3a3a3a;
+    border-radius: 5px;
+    background-color: #969696;
+    text-align: center;
+}
