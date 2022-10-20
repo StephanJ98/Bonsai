@@ -20,6 +20,10 @@
 
 .warningLogo {
     color: #b0b306;
+    transition-property: color;
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.5s;
+    transition-delay: 0.1s;
 }
 
 .normalLogo {
