@@ -1,14 +1,25 @@
 import React, { useState } from 'react'
-import styles from './Login.module.css'
+import { useNavigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
+
+import styles from './Login.module.css'
 import 'react-toastify/dist/ReactToastify.css'
+
 import { ReactComponent as Logo } from '../../Icons/IconPlant.svg'
 
 export default function Login() {
+    let navigate = useNavigate()
     const notify = (value) => toast.warning(value)
     const [name, setName] = useState('Username')
     const [logoColor, setlogoColor] = useState(`${styles.normalLogo}`)
 
+    /**
+     * Checks if the username is long enough.
+     * 
+     * If username length >= 2 then stores the data in a localStorage under the key username, and redirects to /main.
+     * 
+     * @param {Event} event 
+     */
     const handleSubmit = (event) => {
         event.preventDefault()
         if (name.length <= 2) {
@@ -16,9 +27,13 @@ export default function Login() {
             setlogoColor(`${styles.warningLogo}`)
         } else {
             localStorage.setItem('username', name)
+            navigate("/main")
         }
     }
 
+    /**
+     * Checks the state of name and changes it to '' when its value is 'Username'.
+     */
     const handleFocus = () => {
         if (name === "Username") {
             setName('')

@@ -15,7 +15,7 @@ export default function NoValidRoute() {
     return (
         <div id={styles.main}>
             <img id={styles.err404} src={Error404} alt="Error 404" />
-            <h3 id={styles.mesage}>Oops parece que esta página no es valida</h3>
+            <h3 id={styles.mesage}>Página no valida</h3>
             <img id={styles.backBtn} src={BackspaceRounded} alt="Go back button" onClick={() => handleBackBTN()} />
         </div>
     )
