@@ -1,5 +1,7 @@
-import React, {  useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Spinner from '../../Components/Spinner/Spinner'
+
 
 export default function Brain() {
     const [name, setName] = useState(null)
@@ -12,12 +14,13 @@ export default function Brain() {
         } else {
             navigate('/login')
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [name])
 
 
     return (
         <>
-            {name === null && <p>Loading</p>}
+            {name === null && <Spinner />}
         </>
     )
 }
